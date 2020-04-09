@@ -5,7 +5,6 @@
 </template>
 
 <script>
-let a = '';
 export default {
   data() {
     return {

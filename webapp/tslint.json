@@ -38,6 +38,12 @@
           "typeLiterals": "ignore"
         }
       }
+    ],
+    "no-console": false,
+    "prefer-const": false,
+    "object-literal-key-quotes": [
+      false,
+      "consistent-as-needed"
     ]
   }
 }
