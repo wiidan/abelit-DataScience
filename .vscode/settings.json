@@ -1,0 +1,83 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "files.eol": "\n",
+    "cSpell.words": [
+        "Parens",
+        "Whitespaces",
+        "codebases",
+        "commonmark",
+        "docblock",
+        "editorconfig",
+        "esbenp",
+        "gitignore",
+        "junit",
+        "pnpm",
+        "prettier's",
+        "prettiercode",
+        "prettierignore",
+        "prettierrc",
+        "promisify",
+        "stylelint",
+        "vsce"
+    ],
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "prettier.printWidth": 120,
+    "prettier.singleQuote": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.tslint": true
+    },
+    "files.exclude": {
+        "out": true, // set this to true to hide the "out" folder with the compiled JS files
+        "**/*.pyc": true,
+        ".nyc_output": true,
+        "obj": true,
+        "bin": true,
+        "**/__pycache__": true,
+        "**/node_modules": true,
+        ".vscode-test": false,
+        ".vscode test": false,
+        "**/.mypy_cache/**": true,
+        "**/.ropeproject/**": true
+    },
+    "search.exclude": {
+        "out": true, // set this to false to include "out" folder in search results
+        "**/node_modules": true,
+        "coverage": true,
+        "languageServer*/**": true,
+        ".vscode-test": true,
+        ".vscode test": true
+    },
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "python.linting.enabled": false,
+    "python.testing.promptToConfigure": false,
+    "python.workspaceSymbols.enabled": false,
+    "python.formatting.provider": "black",
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "prettier.printWidth": 120,
+    "prettier.singleQuote": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.tslint": true
+    },
+    "python.jediEnabled": false,
+    "python.analysis.logLevel": "Trace",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        // Match what black does.
+        "--max-line-length=88"
+    ],
+}
