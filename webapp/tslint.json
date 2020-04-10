@@ -18,6 +18,10 @@
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
+    "arrow-parens": [
+      false,
+      "as-needed"
+    ],
     "quotemark": [
       true,
       "single"
@@ -33,7 +37,7 @@
         "singleline": "never",
         "multiline": {
           "objects": "ignore",
-          "arrays": "always",
+          "arrays": "ignore",
           "functions": "never",
           "typeLiterals": "ignore"
         }

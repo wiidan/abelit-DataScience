@@ -40,5 +40,5 @@
   // support comment in json file
   "files.associations": {
     "tslint.json": "jsonc"
-}
+  }
 }
