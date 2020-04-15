@@ -9,8 +9,16 @@ import 'element-ui/lib/theme-chalk/index.css';
 import i18n from './locales';
 
 Vue.use(ElementUI, {
-  i18n: (key: string, value: any) => i18n.t(key, value)
+  i18n: (key: string, value: any) => i18n.t(key, value),
 });
+
+// import Echarts
+import echarts from 'echarts';
+Vue.prototype.$echarts = echarts;
+
+// import MD5
+import md5 from 'js-md5';
+Vue.prototype.$md5 = md5;
 
 Vue.config.productionTip = false;
 
@@ -18,5 +26,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app');

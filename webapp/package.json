@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "echarts": "^4.7.0",
     "element-ui": "^2.13.1",
+    "js-md5": "^0.7.3",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-i18n": "^8.16.0",

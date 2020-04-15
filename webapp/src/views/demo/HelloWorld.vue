@@ -6,11 +6,11 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-// import Greeter from '../mixins/Greeter';
+import Greeter from '../../mixins/Greeter';
 
-// let greeter = new Greeter();
+let greeter = new Greeter('h9i');
 
-// greeter.greet();
+console.log(greeter.greet());
 
 @Component
 export default class HelloWorld extends Vue {
@@ -21,7 +21,7 @@ export default class HelloWorld extends Vue {
   }
 
   private hello() {
-    console.log('hello');
+    console.log('hello world');
   }
 
   private mounted() {
