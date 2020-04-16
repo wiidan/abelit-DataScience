@@ -7,10 +7,12 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Greeter from '../../mixins/Greeter';
+import Axios from 'axios';
+// import Axios from 'axios';
 
-let greeter = new Greeter('h9i');
+// let greeter = new Greeter('h9i');
 
-console.log(greeter.greet());
+// console.log(greeter.greet());
 
 @Component
 export default class HelloWorld extends Vue {
@@ -26,6 +28,33 @@ export default class HelloWorld extends Vue {
 
   private mounted() {
     this.hello();
+    this.test();
+    let greeter = new Greeter('h9i');
+    console.log(greeter.greet());
+  }
+  private test() {
+    // Axios.get('/api/employee/device')
+    //   .then((res) => {
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    let testArr: any[] = [
+      {
+        hello: 50,
+        hi: 300,
+      },
+    ];
+
+    let newArr: any[] = [
+      {
+        id: 'hello',
+      },
+    ];
+
+    console.log(testArr);
+    return;
   }
 }
 </script>
