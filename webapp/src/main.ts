@@ -20,6 +20,15 @@ Vue.prototype.$echarts = echarts;
 import md5 from 'js-md5';
 Vue.prototype.$md5 = md5;
 
+// import NProgress
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
+// import axios for ajax application
+import axios from 'axios';
+axios.defaults.baseURL = 'http://127.0.0.1:5000';
+Vue.prototype.$axios = axios;
+
 Vue.config.productionTip = false;
 
 new Vue({
