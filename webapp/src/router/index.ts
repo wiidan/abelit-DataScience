@@ -27,6 +27,11 @@ const routes: RouteConfig[] = [
     path: '/demo/layout',
     name: 'LayoutDemo',
     component: () => import('../views/demo/AppLayout.vue')
+  },
+  {
+    path: '/employee/test',
+    name: 'test',
+    component: () => import('../views/employee/TestDan.vue')
   }
 ];
 
