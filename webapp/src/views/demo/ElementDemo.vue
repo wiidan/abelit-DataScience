@@ -1,12 +1,8 @@
 <template>
   <div>
     <el-row>
-      <el-col>
-        <el-alert :title="$t('route.dashboard')" type="success"> </el-alert>
-      </el-col>
-      <el-col>
-        {{ $t('el.select.loading') }}
-      </el-col>
+      <el-col> <el-alert :title="$t('route.dashboard')" type="success"> </el-alert> dasfsdf </el-col>
+      <el-col> {{ $t('el.select.loading') }} hello </el-col>
     </el-row>
     <el-row>
       <el-col>
@@ -31,6 +27,11 @@
         >
         </el-input>
         <el-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag </el-button>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <el-calendar v-model="value"> </el-calendar>
       </el-col>
     </el-row>
     <el-row>
@@ -77,7 +78,7 @@ export default {
             text: '今天',
             onClick(picker) {
               picker.$emit('pick', new Date());
-            }
+            },
           },
           {
             text: '昨天',
@@ -85,7 +86,7 @@ export default {
               const date = new Date();
               date.setTime(date.getTime() - 3600 * 1000 * 24);
               picker.$emit('pick', date);
-            }
+            },
           },
           {
             text: '一周前',
@@ -93,12 +94,12 @@ export default {
               const date = new Date();
               date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
               picker.$emit('pick', date);
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       value1: '',
-      value2: ''
+      value2: '',
     };
   },
   methods: {
@@ -111,7 +112,7 @@ export default {
 
     showInput() {
       this.inputVisible = true;
-      this.$nextTick(_ => {
+      this.$nextTick((_) => {
         this.$refs.saveTagInput.$refs.input.focus();
       });
     },
@@ -123,8 +124,8 @@ export default {
       }
       this.inputVisible = false;
       this.inputValue = '';
-    }
-  }
+    },
+  },
 };
 </script>
 

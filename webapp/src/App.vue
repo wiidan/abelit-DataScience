@@ -8,7 +8,7 @@
 html,
 body {
   margin: 0px;
-  height: 100%;
+  // height: 100%;
 }
 #app {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,7 +17,7 @@ body {
   // text-align: center;
   // color: #2c3e50;
   margin: 0px;
-  height: 100%;
+  // height: 100%;
   // overflow-y: hidden;
 }
 </style>
