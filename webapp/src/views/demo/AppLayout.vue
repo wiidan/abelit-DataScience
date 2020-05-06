@@ -12,6 +12,7 @@
             background-color="#545c64"
             text-color="#fff"
             active-text-color="#ffd04b"
+            :collapse="isCollapse"
           >
             <el-submenu index="1">
               <template slot="title">
@@ -93,6 +94,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ComponentName extends Vue {
   @Prop() private msg!: string;
+
+  @Prop() private isCollapse: boolean = true;
 
   public handleOpen(key: any, keyPath: any) {
     console.log(key, keyPath);
