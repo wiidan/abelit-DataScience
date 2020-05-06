@@ -1,28 +1,81 @@
 <template>
   <el-container direction="vertaical">
-    <el-aside
-      >Aside
-
-      <div class="block">
-        <span class="demonstration">默认</span>
-        <el-slider v-model="value1"></el-slider>
-      </div>
-      <div class="block">
-        <span class="demonstration">自定义初始值</span>
-        <el-slider v-model="value2"></el-slider>
-      </div>
-      <div class="block">
-        <span class="demonstration">隐藏 Tooltip</span>
-        <el-slider v-model="value3" :show-tooltip="false"></el-slider>
-      </div>
-      <div class="block">
-        <span class="demonstration">格式化 Tooltip</span>
-        <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
-      </div>
-      <div class="block">
-        <span class="demonstration">禁用</span>
-        <el-slider v-model="value5" disabled></el-slider>
-      </div>
+    <el-aside>
+      <div class="title">Aside</div>
+      <el-row class="content">
+        <el-col :span="12">
+          <el-menu
+            default-active="2"
+            class="el-menu-vertical-demo"
+            @open="handleOpen"
+            @close="handleClose"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#ffd04b"
+          >
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>导航一</span>
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="1-1">选项1</el-menu-item>
+                <el-menu-item index="1-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="1-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="1-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="1-4-1">选项1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+            <el-menu-item index="2">
+              <i class="el-icon-menu"></i>
+              <span slot="title">导航二</span>
+            </el-menu-item>
+            <el-menu-item index="3" disabled>
+              <i class="el-icon-document"></i>
+              <span slot="title">导航三</span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <i class="el-icon-setting"></i>
+              <span slot="title">导航四</span>
+            </el-menu-item>
+            <el-menu-item index="2">
+              <i class="el-icon-menu"></i>
+              <span slot="title">导航二</span>
+            </el-menu-item>
+            <el-menu-item index="3" disabled>
+              <i class="el-icon-document"></i>
+              <span slot="title">导航三</span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <i class="el-icon-setting"></i>
+              <span slot="title">导航四</span>
+            </el-menu-item>
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>导航一</span>
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="1-1">选项1</el-menu-item>
+                <el-menu-item index="1-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="1-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="1-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="1-4-1">选项1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+          </el-menu>
+        </el-col>
+      </el-row>
     </el-aside>
     <el-container direction="vertaical">
       <el-header>Header</el-header>
@@ -40,6 +93,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ComponentName extends Vue {
   @Prop() private msg!: string;
+
+  public handleOpen(key: any, keyPath: any) {
+    console.log(key, keyPath);
+  }
+
+  public handleClose(key: any, keyPath: any) {
+    console.log(key, keyPath);
+  }
 }
 </script>
 
@@ -71,8 +132,23 @@ export default class ComponentName extends Vue {
   width: 200px !important;
   position: fixed;
   overflow: hidden;
-  overflow-y: auto;
-  height: 100vh;
+  // height: 100vh;
+  .content {
+    // overflow: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 200px;
+    .el-col {
+      width: 200px;
+    }
+  }
+  .title {
+    height: 60px;
+    line-height: 60px;
+    align-content: center;
+    background-color: #32a30f;
+    text-align: center;
+  }
 }
 
 .el-main {
