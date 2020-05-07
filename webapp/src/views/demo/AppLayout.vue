@@ -13,6 +13,7 @@
             text-color="#fff"
             active-text-color="#ffd04b"
             :collapse="isCollapse"
+            collapse-transition
           >
             <el-submenu index="1">
               <template slot="title">
@@ -74,12 +75,57 @@
                 <el-menu-item index="1-4-1">选项1</el-menu-item>
               </el-submenu>
             </el-submenu>
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>导航一</span>
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="1-1">选项1</el-menu-item>
+                <el-menu-item index="1-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="1-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="1-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="1-4-1">选项1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>导航一</span>
+              </template>
+              <el-menu-item-group>
+                <template slot="title">分组一</template>
+                <el-menu-item index="1-1">选项1</el-menu-item>
+                <el-menu-item index="1-2">选项2</el-menu-item>
+              </el-menu-item-group>
+              <el-menu-item-group title="分组2">
+                <el-menu-item index="1-3">选项3</el-menu-item>
+              </el-menu-item-group>
+              <el-submenu index="1-4">
+                <template slot="title">选项4</template>
+                <el-menu-item index="1-4-1">选项1</el-menu-item>
+              </el-submenu>
+            </el-submenu>
           </el-menu>
         </el-col>
       </el-row>
     </el-aside>
     <el-container direction="vertaical">
-      <el-header>Header</el-header>
+      <el-header>
+        <span class="app-header-menu">
+          <i :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'" @click="isCollapse = !isCollapse"></i>
+        </span>
+        <span class="app-header-userinfo">
+          <i class="el-icon-search"></i>
+          <i class="el-icon-full-screen"></i>
+          <i class="el-icon-user"></i>
+        </span>
+      </el-header>
       <el-main
         >Main
         <router-view></router-view>
@@ -91,11 +137,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import VuePerfectScrollbar from 'vue-perfect-scrollbar';
+
 @Component
 export default class ComponentName extends Vue {
   @Prop() private msg!: string;
 
-  @Prop() private isCollapse: boolean = true;
+  @Prop() private isCollapse: boolean = false;
 
   public handleOpen(key: any, keyPath: any) {
     console.log(key, keyPath);
@@ -112,7 +160,7 @@ export default class ComponentName extends Vue {
 .el-header {
   background-color: #353538;
   color: #f5e2e2;
-  text-align: center;
+  // text-align: center;
   line-height: 60px;
   position: fixed;
   width: 100%;
@@ -125,24 +173,28 @@ export default class ComponentName extends Vue {
   color: #f5e2e2;
   text-align: center;
   line-height: 60px;
+  position: fixed;
+  left: 200px;
+  bottom: 0px;
+  width: 100%;
 }
 
 .el-aside {
   background-color: #404092;
   color: #f5e2e2;
-  text-align: center;
-  line-height: 200px;
   width: 200px !important;
   position: fixed;
+
   overflow: hidden;
-  // height: 100vh;
+  height: 100%;
   .content {
-    // overflow: hidden;
-    overflow-y: auto;
-    height: 100vh;
+    overflow: hidden;
+    // overflow-y: auto;
+    height: 100%;
     width: 200px;
     .el-col {
       width: 200px;
+      height: 100%;
     }
   }
   .title {
@@ -164,5 +216,14 @@ export default class ComponentName extends Vue {
 }
 .el-container {
   height: 100%;
+}
+
+.app-header-menu {
+  font-size: 32px;
+}
+.app-header-userinfo {
+  font-size: 30px;
+  position: fixed;
+  right: 20px;
 }
 </style>
